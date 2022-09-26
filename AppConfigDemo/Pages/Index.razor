@@ -1,0 +1,18 @@
+﻿@inject IConfiguration _configuration;
+
+@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<h2>Historical value: @_configuration["TestHistoricalData"]</h2>
+
+<h2>Environment value: @_configuration["FontColor"]</h2>
+
+@*PART 2 OF DEMO*@
+<h2>Key vault value test: @_configuration["KeyVaultValueTest"]</h2>
