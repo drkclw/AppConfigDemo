@@ -31,6 +31,7 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
         options.Connect(cs)
                     .Select(KeyFilter.Any, LabelFilter.Null)
                     .Select(KeyFilter.Any, hostingContext.HostingEnvironment.EnvironmentName)
+                    .Select("WebApp:", LabelFilter.Null)
                 //DEMO PART 2
                 .ConfigureKeyVault(kv =>
                 {
@@ -41,6 +42,7 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
                 //{
                 //    refresh.Register("Sentinel", refreshAll: true).SetCacheExpiration(new TimeSpan(0, 1, 0));
                 //})
+                //DEMO PART 4
                 .ConfigureRefresh(refresh =>
                 {
                     refresh.Register("Sentinel", refreshAll: true);
